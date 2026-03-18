@@ -8,10 +8,12 @@ A lightweight userscript that adds a floating 💡 button to every webpage so yo
 
 ## Features
 
-- 💡 / 🔌 floating button, fixed to the bottom-right corner
+- 💡 / 🔌 floating button, fixed to the bottom corner of the screen
+- Long press to switch the button between bottom-right and bottom-left
 - Keyboard shortcut: **Ctrl+Shift+D** (Windows/Linux) or **Cmd+Shift+D** (macOS)
-- Persistent state — remembers your last choice across page loads
+- Persistent state — remembers your dark mode preference and button position across page loads
 - Hotkey is suppressed inside text fields so it never interferes with typing
+- Works on desktop and mobile
 - No UI framework, no dependencies beyond Dark Reader itself
 
 ## Requirements
@@ -29,10 +31,11 @@ A lightweight userscript that adds a floating 💡 button to every webpage so yo
 
 | Action | Result |
 |---|---|
-| Click the 💡 button | Toggle dark mode |
+| Click / tap the button | Toggle dark mode |
+| Long press the button (600ms) | Switch between bottom-right and bottom-left |
 | Ctrl/Cmd + Shift + D | Toggle dark mode via keyboard |
 
-The button is intentionally semi-transparent (40% opacity) to stay out of the way, and brightens on hover.
+The button is intentionally semi-transparent (40% opacity) to stay out of the way, and brightens on hover. A brief scale animation confirms a successful long press.
 
 ## Configuration
 

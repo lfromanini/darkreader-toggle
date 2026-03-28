@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name        Dark Reader Toggle
 // @namespace   lfromanini.darkreader.toggle
-// @version     2026.03.18
-// @description Toggle dark mode with lightbulb button + hotkey (Ctrl/Cmd + Shift + D)
+// @version     2026.03.28
+// @description Toggle dark mode with lightbulb button + hotkey (Ctrl/Cmd + Shift + L)
 // @author      Luiz Fernando Romanini
 // @match       *://*/*
 // @exclude     devtools://*
@@ -175,7 +175,7 @@
 			: /Mac/i.test(navigator.platform);
 
 		const cmdOrCtrl = isMac ? e.metaKey : e.ctrlKey;
-		if (cmdOrCtrl && e.shiftKey && e.key.toLowerCase() === 'd') {
+		if (cmdOrCtrl && e.shiftKey && e.key.toLowerCase() === 'l') {
 			e.preventDefault();
 			toggle();
 		}

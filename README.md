@@ -2,17 +2,17 @@
 
 [![Install](https://img.shields.io/badge/Install-Userscript-blue)](https://raw.githubusercontent.com/lfromanini/darkreader-toggle/main/darkreader-toggle.user.js)
 
-A lightweight userscript that adds a floating 💡 button to every webpage so you can toggle [Dark Reader](https://darkreader.org/) on and off without needing the extension — plus a keyboard shortcut.
+A lightweight userscript that lets you toggle [Dark Reader](https://darkreader.org/) on any webpage via a menu command or keyboard shortcut — no extension required.
 
 ---
 
 ## Features
 
-- 💡 / 🔌 floating button, fixed to the bottom corner of the screen
-- Long press to switch the button between bottom-right and bottom-left
+- Toggle dark mode from your userscript manager's [menu command](https://violentmonkey.github.io/api/gm/#gm_registermenucommand)
 - Keyboard shortcut: **Ctrl+Shift+L** (Windows/Linux) or **Cmd+Shift+L** (macOS)
-- Persistent state — remembers your dark mode preference and button position across page loads
-- Hotkey is suppressed inside text fields so it never interferes with typing
+- Persistent state — remembers your dark mode preference across page loads
+- Non-intrusive: hotkey is suppressed inside text fields so it never interferes with typing
+- No UI clutter, no floating buttons, just a subtle toast notification
 - Works on desktop and mobile
 - No UI framework, no dependencies beyond a userscript manager
 
@@ -29,29 +29,32 @@ A lightweight userscript that adds a floating 💡 button to every webpage so yo
 
 ## Usage
 
-| Action | Result |
-|---|---|
-| Click / tap the button | Toggle dark mode |
-| Long press the button (600ms) | Switch between bottom-right and bottom-left |
-| Ctrl/Cmd + Shift + L | Toggle dark mode via keyboard |
+| Action                                             | Result                        |
+|----------------------------------------------------|-------------------------------|
+| Open userscript menu and select "Toggle Dark Mode" | Toggle dark mode              |
+| Ctrl/Cmd + Shift + L                               | Toggle dark mode via keyboard |
 
-The button is intentionally semi-transparent (40% opacity) to stay out of the way, and brightens on hover. A brief scale animation confirms a successful long press.
+A brief toast notification will confirm the current mode.
 
 ## Configuration
 
 Dark Reader is enabled with these default settings:
 
-| Setting | Value |
-|---|---|
-| Brightness | 100 |
-| Contrast | 90 |
-| Sepia | 10 |
+| Setting    | Value |
+|------------|-------|
+| Brightness | 100   |
+| Contrast   | 90    |
+| Sepia      | 10    |
 
 To change them, edit the `DarkReader.enable(...)` call in the script.
 
+> Note: This version of the script does not include a floating button or position switching. If you want those features, let me know and I can help you add them!
+
 ## Compatibility
 
-Tested on Violentmonkey. Should work on Tampermonkey. Does not run inside iframes (`@noframes`) or DevTools pages.
+- Works on all websites (`@match *://*/*`)
+- Does not run inside iframes (`@noframes`) or DevTools pages
+- Tested on Violentmonkey but should work on Tampermonkey
 
 ## License
 
